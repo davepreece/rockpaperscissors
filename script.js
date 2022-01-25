@@ -1,10 +1,12 @@
 const items = ["Rock", "Paper", "Scissors"]
+let welcomeMessage = document.getElementById("selection-el")
 let resultsEl = document.querySelector("#results-el")
 let scoreEl = document.querySelector("#score-el")
 let playerScore = 0
 let computerScore = 0
 let isAlive = false
 
+welcomeMessage.innerText = "Choose your weapon..."
 scoreEl.textContent = playerScore + " - " + computerScore
 
 //random hand function
