@@ -1,26 +1,28 @@
-const items = ["Rock", "Paper", "Scissors"]
-let gameMessage = document.getElementById("gameMessage-el")
+let message = document.getElementById("message-el")
 let score = document.getElementById("score-el")
+const buttons = document.querySelectorAll(".button")
+const items = ["Rock", "Paper", "Scissors"]
+let playerItem = ""
 
-score.innerText = `0 - 0`
-gameMessage.innerText = "Choose your weapon..."
-
-//random hand function
-function randomWeapon() {
-    let randomItem = Math.floor(Math.random() * 3)
-    return items[randomItem]
+function playerHand() {
+    buttons.forEach(buttons => {
+        buttons.addEventListener('click', function () {
+            if (document.getElementsByClassName('rock button')) {
+                playerItem = items[0]
+                message.innerText = items[0]
+            } else if (document.getElementsByClassName('paper button')) {
+                playerItem = items[1]
+                message.innerText = items[1]
+            } else {
+            playerItem = items[2]
+            message.innerText = items[2]
+            }
+        })
+    })
 }
+playerHand()
 
-function playRound(playerWeapon, computerWeapon) {
-    
+
+function computerItem() {
+    return items[Math.floor(Math.random() * items.length)]   
 }
-
-
-
-
-
-
-
-
-
-// console.log("Hello")
